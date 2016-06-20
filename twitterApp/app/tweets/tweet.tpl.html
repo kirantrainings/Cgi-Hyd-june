@@ -1,0 +1,15 @@
+<div class="col-xs-12" ng-controller="tweetCtrl">
+    <h1>Tweets</h1>
+
+    <div class="col-xs-6" ng-repeat="tweet in tweets">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{tweet.tweetedBy}}</div>
+            <div class="panel-body">
+                {{tweet.text}}
+            </div>
+            <div class="panel-footer">
+                <div>{{tweet.date}}</div>
+            </div>
+        </div>
+    </div>
+</div>

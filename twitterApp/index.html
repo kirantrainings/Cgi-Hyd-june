@@ -1,0 +1,31 @@
+<html ng-app="twitterApp">
+
+<head>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <!-- refer jquery-->
+    <script src="vendor/jquery-2.2.0.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.js"></script>
+</head>
+
+<body ng-controller="mainCtrl">
+    <button class="btn btn-primary" ng-click="loadTemplate('tweets')">Tweets</button>
+    <button class="btn btn-primary" ng-click="loadTemplate('login')">Login</button>
+    <button class="btn btn-primary" ng-click="loadTemplate('register')">Register</button>
+
+    <div ng-include="templateUrl">
+
+    </div>
+    <!--login-Module-->
+    <script src="app/login/login.js"></script>
+    <!--tweets-module-->
+    <script src="app/tweets/tweets.js"></script>
+    <script src="app/tweets/tweets-controller.js"></script>
+    <!--registe module-->
+    <script src="app/register/register.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/common/mainCtrl.js"></script>
+</body>
+
+</html>
