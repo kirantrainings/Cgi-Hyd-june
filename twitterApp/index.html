@@ -10,11 +10,14 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <button class="btn btn-primary" ng-click="loadTemplate('tweets')">Tweets</button>
-    <button class="btn btn-primary" ng-click="loadTemplate('login')">Login</button>
-    <button class="btn btn-primary" ng-click="loadTemplate('register')">Register</button>
+    <div class="container">
 
-    <div ng-include="templateUrl">
+        <div ng-include="headerUrl">
+
+        </div>
+        <div ng-include="templateUrl">
+
+        </div>
 
     </div>
     <!--login-Module-->
