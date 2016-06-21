@@ -21,7 +21,7 @@ angular.module('register')
             $scope.registerUser.countryCode = $scope.selectedCountry.code;
 
             $state.go("tweets", {
-                data: $scope.registerUser
+                userDetails: $scope.registerUser
             })
         };
     });
