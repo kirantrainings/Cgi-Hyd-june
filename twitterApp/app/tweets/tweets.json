@@ -1,0 +1,6 @@
+{
+    "tweets": [{
+        tweet: "abcd",
+        tweetedBy: "Kiran"
+    }]
+}

@@ -1,5 +1,5 @@
 angular.module('twitterApp')
-    .controller("mainCtrl", function ($scope) {
+    .controller("mainCtrl", function ($scope, tabService) {
         var registerUrl = 'app/register/register.tpl.html';
         var loginUrl = 'app/login/login.tpl.html';
         var tweetUrl = 'app/tweets/tweet.tpl.html';
@@ -17,19 +17,12 @@ angular.module('twitterApp')
         };
         $scope.headerUrl = "app/common/navbar.tpl.html";
 
-        $scope.tabs = [
-            {
-                name: "Login",
-                template: 'app/login/login.tpl.html'
-                },
-            {
-                name: "Register",
-                template: 'app/register/register.tpl.html'
-            },
-            {
-                name: "Tweets",
-                template: 'app/tweets/tweet.tpl.html'
-            },
-                      ]
+        tabService.getTabs().success(function (response) {
+                console.log(response);
+                $scope.tabs = response.tabs;
+            })
+            .error(function (response) {
+                console.log(response);
+            })
 
     });

@@ -1,18 +1,12 @@
 angular.module("tweets")
-    .controller("tweetCtrl", function ($scope) {
+    .controller("tweetCtrl", function ($scope, tweetSvc) {
 
 
-        $scope.tweets = [{
-            text: "Hey i am the first tweet",
-            tweetedBy: "Kiran",
-            date: "06/20/2016"
-        }, {
-            text: "Hey i am the second tweet",
-            tweetedBy: "John ",
-            date: "06/21/2016"
-        }, {
-            text: "Hey i am the second tweet",
-            tweetedBy: "John ",
-            date: "06/21/2016"
-        }];
+        tweetSvc.getTweets().then(function (response) {
+            console.log(response);
+        }).catch(function (response) {
+            console.log(response);
+        }).finally(function (response) {
+            console.log("I am executing Finally!!!!!");
+        });
     });
