@@ -1,5 +1,5 @@
 angular.module('register')
-    .controller('registerCtrl', function ($scope, APP_VALIDATIONS) {
+    .controller('registerCtrl', function ($scope, APP_VALIDATIONS, $state) {
         $scope.validations = APP_VALIDATIONS;
         $scope.registerUser = {};
         $scope.countries = [{
@@ -19,6 +19,9 @@ angular.module('register')
                            }];
         $scope.userRegistration = function () {
             $scope.registerUser.countryCode = $scope.selectedCountry.code;
-            console.log($scope.registerUser);
+
+            $state.go("tweets", {
+                data: $scope.registerUser
+            })
         };
     });

@@ -1,6 +1,6 @@
 angular.module("tweets")
-    .controller("tweetCtrl", function ($scope, tweetSvc, $filter) {
-
+    .controller("tweetCtrl", function ($scope, tweetSvc, $filter, $state) {
+        console.log($state);
         $scope.countries = [{
                 code: "IN",
                 name: "India",

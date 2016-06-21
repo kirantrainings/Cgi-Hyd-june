@@ -7,6 +7,7 @@
     <script src="vendor/jquery-2.2.0.js"></script>
     <script src="vendor/bootstrap.js"></script>
     <script src="vendor/angular.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
 </head>
 
 <body ng-controller="mainCtrl">
@@ -15,9 +16,7 @@
         <div ng-include="headerUrl">
 
         </div>
-        <div ng-include="templateUrl">
-
-        </div>
+        <div ui-view></div>
 
     </div>
     <!--login-Module-->
