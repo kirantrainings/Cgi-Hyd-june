@@ -1,14 +1,26 @@
 <div class="col-xs-12" ng-controller="tweetCtrl">
     <h1>Tweets</h1>
+    <div class="row">
+        <div class="col-xs-6">
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchTweets">
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <select class="form-control" ng-model="selectedCountry" ng-options=" country.name group by country.continent for country in countries">
+            <option value="">Please Select</option>
+        </select>{{selectedCountry}}
+    </div>
 
-    <div class="col-xs-6" ng-repeat="tweet in tweets">
+    <br>
+    <div class="col-xs-6" ng-repeat="tweet in tweets|filter:{tweetedBy:searchTweets}|orderBy:'-tweetedBy'">
         <div class="panel panel-default">
-            <div class="panel-heading">{{tweet.tweetedBy}}</div>
+            <div class="panel-heading">{{tweet.tweetedBy|uppercase}}</div>
             <div class="panel-body">
-                {{tweet.text}}
+                {{tweet.tweetText|limitTo:10}}
             </div>
             <div class="panel-footer">
-                <div>{{tweet.date}}</div>
+                <div>{{tweet.tweetedDate|date:"dd/MM/yyyy HH:MM:ss"}}</div>
+                <div>{{tweet.phoneNumber}}</div>
             </div>
         </div>
     </div>
