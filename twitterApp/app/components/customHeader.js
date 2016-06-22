@@ -33,3 +33,23 @@ angular.module("twitterApp")
             }
         }
     });
+
+angular.module("twitterApp")
+    .directive("customName", function () {
+        return {
+            restrict: "A",
+            template: "<h1>{{name}}</h1>",
+            link: function (scope, element, attrs) {
+                setTimeout(function () {
+                    scope.name = "Kiran";
+                    scope.$apply();
+                }, 5000);
+
+                scope.$watch('name', function (newVal, oldVal) {
+                    console.log(newVal);
+                    console.log(oldVal);
+                })
+
+            }
+        }
+    });

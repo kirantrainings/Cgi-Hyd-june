@@ -17,12 +17,12 @@
     <br>
     <div class="col-xs-6" ng-repeat="tweet in tweets|filter:{tweetedBy:searchTweets}|orderBy:'-tweetedBy'">
         <div class="panel panel-default">
-            <div class="panel-heading">{{tweet.tweetedBy|uppercase}}</div>
+            <div class="panel-heading">{{::tweet.tweetedBy|uppercase}}</div>
             <div class="panel-body">
-                {{tweet.tweetText|limitTo:10}}
+                {{::tweet.tweetText|limitTo:10}}
             </div>
             <div class="panel-footer">
-                <div>{{tweet.tweetedDate|date:"dd/MM/yyyy HH:MM:ss"}}</div>
+                <div>{{::tweet.tweetedDate|date:"dd/MM/yyyy HH:MM:ss"}}</div>
                 <div>{{tweet.phoneNumber}}</div>
             </div>
         </div>

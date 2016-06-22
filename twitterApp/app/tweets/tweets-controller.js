@@ -1,5 +1,10 @@
 angular.module("tweets")
     .controller("tweetCtrl", function ($scope, tweetSvc, $filter, $state) {
+        $scope.$watchCollection('selectedCountry', function (newVal, oldVal) {
+            console.log(newVal);
+            console.log(oldVal);
+        });
+
         console.log($state);
         $scope.countries = [{
                 code: "IN",
@@ -29,4 +34,7 @@ angular.module("tweets")
         }).finally(function (response) {
             console.log("I am executing Finally!!!!!");
         });
+
+
+
     });

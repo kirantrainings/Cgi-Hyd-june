@@ -3,7 +3,7 @@ angular.module('twitterApp')
         var registerUrl = 'app/register/register.tpl.html';
         var loginUrl = 'app/login/login.tpl.html';
         var tweetUrl = 'app/tweets/tweet.tpl.html';
-
+        $scope.name = "Angularjs";
 
         $scope.loadTemplate = function (type) {
             if (type.name == "Login") {
